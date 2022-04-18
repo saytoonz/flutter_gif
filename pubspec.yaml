@@ -1,7 +1,7 @@
 name: flutter_gif
 description: A new flutter plugin project.
 version: 0.0.1
-homepage: https://www.flutter-doctor.com
+homepage: https://github.com/saytoonz/flutter_gif
 
 environment:
   sdk: ">=2.16.1 <3.0.0"
