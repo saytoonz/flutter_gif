@@ -74,10 +74,10 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
           bottom: const TabBar(
             tabs: [
               Tab(
-                child: Text("不同类型图片"),
+                child: Text("Different types of pictures"),
               ),
               Tab(
-                child: Text("控制方式"),
+                child: Text("Way to control"),
               )
             ],
           ),
@@ -86,18 +86,18 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
           children: [
             ListView(
               children: [
-                const Text("资源"),
+                const Text("From asset file"),
                 GifImage(
                   controller: controller1,
                   image: const AssetImage("images/animate.gif"),
                 ),
-                const Text("网络"),
+                const Text("Internet"),
                 GifImage(
                   controller: controller2,
                   image: const NetworkImage(
                       "http://img.mp.itc.cn/upload/20161107/5cad975eee9e4b45ae9d3c1238ccf91e.jpg"),
                 ),
-                const Text("内存"),
+                const Text("MemoryImage (eg. Base64Url)"),
                 GifImage(
                   controller: controller4,
                   image: MemoryImage(base64Decode(base64GifUrl)),
@@ -109,7 +109,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                 Row(
                   children: [
                     ElevatedButton(
-                      child: const Text("无限循环"),
+                      child: const Text("Infinite loop"),
                       onPressed: () {
                         controller3.repeat(
                             min: 0,
@@ -118,13 +118,13 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                       },
                     ),
                     ElevatedButton(
-                      child: const Text("暂停"),
+                      child: const Text("Pause"),
                       onPressed: () {
                         controller3.stop();
                       },
                     ),
                     ElevatedButton(
-                      child: const Text("播放到末尾一次"),
+                      child: const Text("Play once"),
                       onPressed: () {
                         controller3.animateTo(52,
                             duration: const Duration(milliseconds: 1000));
