@@ -12,7 +12,7 @@ We should know that in order to achieve Gif in flutter, we can use Image, but we
 
    ```dart
 
-        flutter_gif: any # or the latest version on Pub
+        flutter_gif: any // or the latest version on Pub
 
    ```
 
