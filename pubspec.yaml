@@ -1,6 +1,6 @@
 name: flutter_gif
 description: gif image widget help to control gif progress,speed,repeat frames .
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/saytoonz/flutter_gif
 
 environment:
