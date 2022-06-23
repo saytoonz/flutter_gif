@@ -1,0 +1,36 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  errors:
+    todo: ignore
+  strong-mode:
+    implicit-casts: false
+    implicit-dynamic: false
+
+linter:
+  rules:
+    camel_case_types: true
+    require_trailing_commas: true
+    avoid_positional_boolean_parameters: false
+    avoid_print: true
+    always_declare_return_types: true
+    prefer_is_empty: true
+    prefer_is_not_empty: true
+    avoid_empty_else: true
+    avoid_type_to_string: true
+    close_sinks: true
+    control_flow_in_finally: true
+    empty_statements: true
+    throw_in_finally: true
+    unawaited_futures: true
+    unnecessary_await_in_return: true
+    avoid_shadowing_type_parameters: true
+    parameter_assignments: true
+    only_throw_errors: true
+    always_use_package_imports: true
+    avoid_dynamic_calls: true
+    prefer_void_to_null: true
+    unnecessary_lambdas: true
+    unnecessary_const: true
+    avoid_void_async: true
+    lines_longer_than_80_chars: true
