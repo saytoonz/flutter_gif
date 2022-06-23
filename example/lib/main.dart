@@ -13,9 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: ThemeData(primarySwatch: Colors.blue),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -26,7 +24,7 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
@@ -37,14 +35,14 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
     controller1 = FlutterGifController(vsync: this);
     controller2 = FlutterGifController(vsync: this);
     controller4 = FlutterGifController(vsync: this);
-    WidgetsBinding.instance?.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       controller1.repeat(
         min: 0,
         max: 53,
         period: const Duration(milliseconds: 200),
       );
     });
-    WidgetsBinding.instance?.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       controller2.repeat(
         min: 0,
         max: 13,
