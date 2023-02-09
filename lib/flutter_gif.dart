@@ -7,7 +7,6 @@
 library flutter_gif;
 
 import 'dart:io';
-import 'dart:typed_data';
 import 'dart:ui' as ui show Codec;
 import 'dart:ui';
 
@@ -257,13 +256,15 @@ Future<List<ImageInfo>> fetchGif(ImageProvider provider) async {
     throw Exception("Unsupported image provider");
   }
 
-  ui.Codec codec = await PaintingBinding.instance.instantiateImageCodec(bytes);
-  infos = [];
+  final buffer = await ImmutableBuffer.fromUint8List(bytes);
+  ui.Codec codec =
+      await PaintingBinding.instance.instantiateImageCodecFromBuffer(buffer);
   for (int i = 0; i < codec.frameCount; i++) {
-    FrameInfo frameInfo = await codec.getNextFrame();
-    //scale ??
-    infos.add(ImageInfo(image: frameInfo.image));
+    final frameInfo = await codec.getNextFrame();
+    final duration = frameInfo.duration.inSeconds;
+    for (int sec = 1; sec <= duration; sec++) {
+      infos.add(ImageInfo(image: frameInfo.image));
+    }
   }
-  GifImage.cache.caches.putIfAbsent(key, () => infos);
   return infos;
 }
