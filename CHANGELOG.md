@@ -6,3 +6,5 @@
 * Support package
 ## 0.0.4
 * ReadMe updated
+## 0.0.5
+* Dart 3.16.0 support
