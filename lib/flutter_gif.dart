@@ -257,8 +257,7 @@ Future<List<ImageInfo>> fetchGif(ImageProvider provider) async {
   }
 
   final buffer = await ImmutableBuffer.fromUint8List(bytes);
-  ui.Codec codec =
-      await PaintingBinding.instance.instantiateImageCodecFromBuffer(buffer);
+  ui.Codec codec = await instantiateImageCodecFromBuffer(buffer);
   for (int i = 0; i < codec.frameCount; i++) {
     final frameInfo = await codec.getNextFrame();
     final duration = frameInfo.duration.inSeconds;
